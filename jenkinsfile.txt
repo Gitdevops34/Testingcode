@@ -1,0 +1,19 @@
+pipeline {
+   agent any
+      stages {
+         stage('Hello') {
+               steps {
+               echo 'Hello World'
+               sh ‘git --version’
+               sh ‘v’
+               }
+            }
+        stage('docker') {
+               steps {
+               sh `docker images'
+               sh ‘docker build -t my-python . -f dockerfile1’
+               sh ‘docker run my-python’
+               }
+            } 
+		}
+    }
