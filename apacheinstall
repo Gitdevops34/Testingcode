@@ -1,10 +1,12 @@
 pipelines {
   agent any {
        stages {
-        steps ('install apache') {
+        stages ('install apache') {
+        steps {
              sh 'sudo apt install apache2-bin'
-             sh 'apache --version'
+             sh 'apache2 -version'
             }
          }
       }
  }
+}
