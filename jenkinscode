@@ -11,7 +11,7 @@ pipeline {
       stage('Build') {
             steps {
                 sudo docker images
-                git branch: 'master', url: 'https://github.com/Gitdevops34/Testingcode.git'
+                //git branch: 'master', url: 'https://github.com/Gitdevops34/Testingcode.git'
                 docker build -t my-python . -f dockerfile1
                 docker run my-python
                 //bat 'python ops.py'
