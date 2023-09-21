@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('install apache') {
           steps {
-             sh 'sudo apt install apache2-bin'
+             //sh 'sudo apt install apache2-bin'
              sh 'apache2 -version'
             }
          }
