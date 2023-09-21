@@ -5,12 +5,11 @@ pipeline {
                steps {
                echo 'Hello World'
                sh 'git --version'
-               sh 'v'
                }
             }
-      stage('Build') {
+      stage('docker Build') {
             steps {
-                sh 'sudo docker images'
+                //sh 'sudo docker images'
                 //git branch: 'master', url: 'https://github.com/Gitdevops34/Testingcode.git'
                 sh 'docker build -t my-python . -f dockerfile1'
                 sh 'docker run my-python'
