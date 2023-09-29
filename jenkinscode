@@ -14,6 +14,7 @@ pipeline {
                 //sh 'sudo docker build -t my-python . -f dockerfile1'
                 //sh 'python3 python.py'
                 echo "Hello are your there"
+                sh 'py.test --junitxml results.xml python.py
                 sh 'mkdir /home/mukesh/file.txt'
             }
         } 
