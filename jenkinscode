@@ -13,7 +13,7 @@ pipeline {
                 //git branch: 'master', url: 'https://github.com/Gitdevops34/Testingcode.git'
                 //sh 'sudo docker build -t my-python . -f dockerfile1'
                 sh 'python3 python.py'
-                //bat 'python ops.py'
+                echo "Hello are your there"
             }
         } 
 		}
