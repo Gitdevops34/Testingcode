@@ -9,7 +9,7 @@ pipeline {
             }
       stage('python Build') {
             steps {
-                //sh 'sudo docker images'
+                sh 'sudo docker images'
                 //git branch: 'master', url: 'https://github.com/Gitdevops34/Testingcode.git'
                 //sh 'sudo docker build -t my-python . -f dockerfile1'
                 sh 'python3 python.py'
