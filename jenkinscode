@@ -1,22 +1,15 @@
 pipeline {
    agent any
       stages {
-checkout changelog: false, scm: scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Gitdevops34/Testingcode.git']])
-         stage('Hello') {
+         stage('checkout') {
                steps {
-               echo 'Hello World'
-               sh 'git --version'
-		sh 'git status'
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Gitdevops34/Testingcode.git']]) 
                }
             }
-      stage('python Build') {
+      stage('images build') {
             steps {
                 sh 'sudo docker images'
-                //git branch: 'master', url: 'https://github.com/Gitdevops34/Testingcode.git'
-                //sh 'sudo docker build -t my-python . -f dockerfile1'
-                //sh 'python3 python.py'
-                echo "Hello are your there"
-                
+                sh 'sudo docker build -t my-web . -f dockerfile1'
             }
         } 
 		}
