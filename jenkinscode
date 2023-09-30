@@ -1,6 +1,7 @@
 pipeline {
    agent any
       stages {
+checkout changelog: false, scm: scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Gitdevops34/Testingcode.git']])
          stage('Hello') {
                steps {
                echo 'Hello World'
