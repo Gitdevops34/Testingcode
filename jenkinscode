@@ -8,8 +8,8 @@ pipeline {
             }
       stage('images build') {
             steps {
-                sh 'sudo docker images'
-                sh 'sudo docker build -t my-web . -f dockerfile1'
+                sh 'docker images'
+                sh 'docker build -t my-web . -f dockerfile1'
             }
         } 
        stage('Expose docker container') {
