@@ -14,8 +14,8 @@ pipeline {
         } 
        stage('Expose docker container') {
             steps {
-                sh 'sudo docker run -d -p 92:80 my-web'
-             withDockerRegistry(credentialsId: '5df1eb8a-c38b-41ca-af6b-2e52171006db', url: 'https://hub.docker.com/u/mukeshdev') {
+                sh 'sudo docker run -d -p 93:80 my-web'
+             withDockerRegistry(credentialsId: '5df1eb8a-c38b-41ca-af6b-2e52171006db', url: 'https://registry.hub.docker.com/u/mukeshdev') {
                 sh 'sudo docker tag my-web mukesh/my-web:1.0'
                 sh 'sudo docker push mukesh/my-web:1.0'
               }
